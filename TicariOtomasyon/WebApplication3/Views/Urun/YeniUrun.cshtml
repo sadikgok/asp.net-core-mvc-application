@@ -1,0 +1,33 @@
+﻿@model WebApplication3.Models.Siniflar.Urun
+@{
+    ViewData["Title"] = "YeniUrun";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Yeni Urun Ekleme</h1>
+
+<br />
+<form class="form-group " method="post">
+    @Html.LabelFor(x=>x.UrunAdi)
+    @Html.TextBoxFor(x=>x.UrunAdi,new { @class="form-control" })
+    <br />
+    @Html.LabelFor(x=>x.Marka)
+    @Html.TextBoxFor(x=>x.Marka,new { @class="form-control" })
+    <br />
+    @Html.LabelFor(x=>x.Stok)
+    @Html.TextBoxFor(x=>x.Stok,new { @class="form-control" })
+    <br />
+    @Html.LabelFor(x=>x.AlisFiyati)
+    @Html.TextBoxFor(x=>x.AlisFiyati,new { @class="form-control" })
+    <br />
+    @Html.LabelFor(x=>x.SatisFiyati)
+    @Html.TextBoxFor(x=>x.SatisFiyati,new { @class="form-control" })
+    <br />
+    @Html.LabelFor(x=>x.KategoriId)
+    @Html.DropDownListFor(x=>x.KategoriId,(List<SelectListItem> )ViewBag.list,new { @class="form-control" })
+    <br />
+    @Html.LabelFor(x=>x.UrunGorsel)
+    @Html.TextBoxFor(x=>x.UrunGorsel,new { @class="form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

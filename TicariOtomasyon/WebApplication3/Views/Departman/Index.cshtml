@@ -1,0 +1,28 @@
+﻿@using WebApplication3.Models.Siniflar
+@model List<Departman>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <td>ID</td>
+        <td>DEPARTMAN ADI</td>
+        <td>SİL</td>
+        <td>GÜNCELLER</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.DepartmanId </td>
+            <td>@item.DepartmanAdi </td>
+            <td><a href="/Departman/DepartmanSil/@item.DepartmanId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Departman/DepartmanGetir/@item.DepartmanId" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Departman/DepartmanDetay/@item.DepartmanId" class="btn btn-default" style="background-color:maroon;color:white">Detaylar</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Departman/DepartmanEkle" class="btn btn-info">Departman Ekle</a>

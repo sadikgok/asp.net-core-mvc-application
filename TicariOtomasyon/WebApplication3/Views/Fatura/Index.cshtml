@@ -1,0 +1,62 @@
+﻿@using WebApplication3.Models.Siniflar
+@model List<Fatura>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<h1>Yeni Fatura Ekle</h1>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Seri Sıra No</th>
+        <th>Tarih</th>
+        <th>Saat</th>
+        <th>Toplam</th>
+        <th>GÜNCELLE</th>
+        <th>Detaylar</th>
+        <th>PopUp Liste</th>
+        <th>Yeni Kalem</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FaturaId</td>
+            <td>@item.FaturaSeriNo@item.FaturaSıraNo</td>
+            <td>@item.Tarih</td>v
+            <td>@item.Saat</td>v
+            <td>
+                @item.ToplamTutar
+            </td>
+            <td><a href="/Fatura/FaturaGetir/@item.FaturaId" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Fatura/FaturaDetay/@item.FaturaId" class="btn btn-secondary">Fatura Detay</a></td>
+            <td><a href="/Fatura/FaturaDetay/@item.FaturaId" class="btn btn-secondary">Liste</a></td>
+            <td><a href="/Fatura/FaturaDetay/@item.FaturaId" class="btn btn-secondary">Kalem</a></td>
+        </tr>
+    }
+</table>
+<a href="/Fatura/FaturaEkle" class="btn btn-primary">Fatura Ekle</a>
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-lg">Popup Pernceresi</button>
+
+
+<div class="modal fade" id="modal-lg">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Large Modal</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

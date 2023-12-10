@@ -1,0 +1,42 @@
+﻿@using WebApplication3.Models.Siniflar
+@model List<Cari>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<br />
+<table class="table table-bordred">
+    <tr>
+        <th>Cari Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Ünvan</th>
+        <th>Şehir</th>
+        <th>Mail</th>
+        <th>Telefon</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.CariId</td>
+            <td>@item.CariAdi</td>
+            <td>@item.CariSoyadi</td>
+            <td>@item.CariUnvani</td>
+            <td>@item.CariSehir</td>
+            <td>@item.CariMail</td>
+            <td>@item.CariTelefon</td>
+            <td><a href="/Cari/CariSil/@item.CariId/" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Cari/CariGetir/@item.CariId/" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Cari/MusteriSatis/@item.CariId" class="btn btn-secondary"></a>Satış Geçmişi</td>
+        </tr>
+    }
+
+</table>
+<a href="/Cari/YeniCari/" class="btn btn-primary">Cari Ekle</a>

@@ -1,0 +1,36 @@
+﻿@using WebApplication3.Models.Siniflar
+@model List<KargoDetay>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+@using (Html.BeginForm("Index", "Kargo", FormMethod.Get))
+{
+    <p>
+        Kargo Takip Numarası : @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <td>Personel</td>
+        <td>Alıcı</td>
+        <td>Takip Kodu</td>
+        <td>Tarih</td>
+        <td>Detaylar</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Personel </td>
+            <td>@item.Alici </td>
+            <td>@item.TakipKodu</td>
+            <td>@item.Tarih </td>
+            <td><a href="/Kargo/KargoTakip/@item.TakipKodu" class="btn btn-danger">Detay</a></td>
+        </tr>
+    }
+</table>
+<a href="/Kargo/YeniKargo" class="btn btn-info"> Yeni Kargo Girişi</a>

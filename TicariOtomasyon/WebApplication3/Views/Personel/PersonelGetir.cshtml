@@ -1,0 +1,28 @@
+﻿@model WebApplication3.Models.Siniflar.Personel
+@{
+    ViewData["Title"] = "PersonelGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>PersonelGetir</h1>
+<br />
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+    <div class="form-group ">
+        @Html.HiddenFor(x=>x.PersonelId)
+        @Html.LabelFor(x=>x.PersonelAdi)
+        @Html.TextBoxFor(x=>x.PersonelAdi,new { @class="form-control" })
+        <br />
+        @Html.LabelFor(x=>x.PersonelSoyadi)
+        @Html.TextBoxFor(x=>x.PersonelSoyadi,new { @class="form-control" })
+        <br />
+        @Html.LabelFor(x=>x.PersonelGorseli)
+        @Html.TextBoxFor(x=>x.PersonelGorseli,new { @class="form-control" })
+        <br />
+        @Html.LabelFor(x=>x.Departman)
+        @Html.DropDownListFor(x=>x.DepartmanId,(List<SelectListItem>)ViewBag.dgr, new { @class="form-control" })
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    </div>
+}
+

@@ -1,0 +1,29 @@
+﻿@using WebApplication3.Models.Siniflar
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Kategori>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <td>ID</td>
+        <td>Kategori Adı</td>
+        <td>Sil</td>
+        <td>Güncelle</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.KategoriId </td>
+            <td>@item.KategoriAd </td>
+            <td><a href="#" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Kategori/KategoriGetir/@item.KategoriId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>

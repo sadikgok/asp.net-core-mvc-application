@@ -1,0 +1,22 @@
+﻿@model WebApplication3.Models.Siniflar.KargoDetay
+
+@{
+    ViewData["Title"] = "YeniKargo";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Yeni Kargo</h1>
+
+<form class="form-group " method="post">
+    @Html.LabelFor(x=>x.TakipKodu)
+    <input type="text" class="form-control" value="@ViewBag.kod" name="TakipKodu" readonly />
+    @Html.LabelFor(x=>x.Personel)
+    <input type="text" class="form-control" name="Personel" />
+    @Html.LabelFor(x=>x.Alici)
+    <input type="text" class="form-control" name="Alici" />
+    @Html.LabelFor(x=>x.Tarih)
+    <input type="date" class="form-control" name="Tarih" value="@DateTime.Today.ToString()" />
+    @Html.LabelFor(x=>x.Aciklama)
+    <input type="text" class="form-control" name="Aciklama" />
+    <button class="btn btn-info ">Kaydet</button>
+</form>

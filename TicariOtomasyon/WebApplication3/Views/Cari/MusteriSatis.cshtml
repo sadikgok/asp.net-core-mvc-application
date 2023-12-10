@@ -1,0 +1,39 @@
+﻿@using WebApplication3.Models.Siniflar
+@model List<SatisHareket>
+@{
+    ViewData["Title"] = "MusteriSatis";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Musteri Satis</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Personel Adı: @ViewBag.Deger</li>
+</ol>
+<br />
+<div style="background-color:lightgray  "></div>
+<table class="table table-hover">
+    <tr>
+        <th>PERSONEL ID</th>
+        <th>ÜRÜN</th>
+        <th>PERSONEL</th>
+        <th>FİYAT</th>
+        <th>ADET</th>
+        <th>TOPLAM</th>
+        <th>TARİH</th>
+        <th>YAZDIR</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SatisId</td>
+            <td>@item.Urun.UrunAdi</td>
+            <td>@item.Personel.PersonelAdi@item.Personel.PersonelSoyadi</td>
+            <td>@item.Fiyat</td>
+            <td>@item.Adet</td>
+            <td>@item.ToplamTutar</td>
+            <td>@item.SatisTarih</td>
+            <td><a href="# " class="btn btn-primary">Yazdır</a></td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<WebApplication3.Models.Siniflar.SinifGrup>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 10px">#</th>
+            <th>Şehir </th>
+            <th>Progress Bar</th>
+            <th style="width: 40px">Adet</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int siraNo = 0;
+        }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @{
+                        siraNo++;
+                    }
+                </td>
+                <td>@item.Departman</td>
+                <td>
+                    @if (item.DepartmanSayi == 1)
+                    {
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                        </div>
+                    }
+                    @if (item.DepartmanSayi == 2)
+                    {
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-warning" style="width: 70%"></div>
+                        </div>
+                    }
+                    @if (item.DepartmanSayi == 3)
+                    {
+                        <div class="progress progress-xs">
+                            <div class="progress-bar progress-bar-success" style="width: 70%"></div>
+                        </div>
+                    }
+                </td>
+                <td>
+                    @if (item.DepartmanSayi == 1)
+                    {
+                        <span class="badge bg-danger">
+                            @item.DepartmanSayi
+                        </span>
+                    }
+                    @if (item.DepartmanSayi == 2)
+                    {
+                        <span class="badge bg-warning">
+                            @item.DepartmanSayi
+                        </span>
+                    }
+                    @if (item.DepartmanSayi == 2)
+                    {
+                        <span class="badge bg-success">
+                            @item.DepartmanSayi
+                        </span>
+                    }
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

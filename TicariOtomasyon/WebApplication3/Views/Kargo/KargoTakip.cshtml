@@ -1,0 +1,23 @@
+﻿@using WebApplication3.Models.Siniflar
+@model List<KargoTakip>
+@{
+    ViewData["Title"] = "KargoTakip";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>Kargo Takip</h1>
+
+<table class="table table-striped">
+    <tr>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Aciklama</td>
+            <td>@item.TarihZaman</td>
+        </tr>
+
+    }
+</table>

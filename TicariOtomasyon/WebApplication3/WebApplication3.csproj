@@ -1,0 +1,76 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\AdminLTE-3.0.4\.github\ISSUE_TEMPLATE\bug-report-for-adminlte-v2-4-x.md" />
+    <None Include="wwwroot\AdminLTE-3.0.4\.github\ISSUE_TEMPLATE\bug-report-for-adminlte-v3-x.md" />
+    <None Include="wwwroot\AdminLTE-3.0.4\.github\ISSUE_TEMPLATE\feature-request-for-adminlte-v3-x.md" />
+    <None Include="wwwroot\web2\css\bootstrap.css" />
+    <None Include="wwwroot\web2\css\clndr.css" />
+    <None Include="wwwroot\web2\css\jqvmap.css" />
+    <None Include="wwwroot\web2\css\nav.css" />
+    <None Include="wwwroot\web2\css\style.css" />
+    <None Include="wwwroot\web2\images\ar2.png" />
+    <None Include="wwwroot\web2\images\arrows.png" />
+    <None Include="wwwroot\web2\images\avatar.jpg" />
+    <None Include="wwwroot\web2\images\avatar1.jpg" />
+    <None Include="wwwroot\web2\images\avatar2.jpg" />
+    <None Include="wwwroot\web2\images\img-sprite.png" />
+    <None Include="wwwroot\web2\images\into.png" />
+    <None Include="wwwroot\web2\images\into1.png" />
+    <None Include="wwwroot\web2\images\logo.png" />
+    <None Include="wwwroot\web2\images\pp.jpg" />
+    <None Include="wwwroot\web2\images\pp0.jpg" />
+    <None Include="wwwroot\web2\images\pp01.jpg" />
+    <None Include="wwwroot\web2\images\settings.png" />
+    <None Include="wwwroot\web2\images\tick-mark.png" />
+    <None Include="wwwroot\web2\js\Chart1.js" />
+    <None Include="wwwroot\web2\js\clndr.js" />
+    <None Include="wwwroot\web2\js\easyResponsiveTabs.js" />
+    <None Include="wwwroot\web2\js\jquery.easydropdown.js" />
+    <None Include="wwwroot\web2\js\jquery.min.js" />
+    <None Include="wwwroot\web2\js\jquery.nicescroll.js" />
+    <None Include="wwwroot\web2\js\jquery.vmap.js" />
+    <None Include="wwwroot\web2\js\jquery.vmap.sampledata.js" />
+    <None Include="wwwroot\web2\js\jquery.vmap.world.js" />
+    <None Include="wwwroot\web2\js\main.js" />
+    <None Include="wwwroot\web2\js\moment-2.2.1.js" />
+    <None Include="wwwroot\web2\js\site.js" />
+    <None Include="wwwroot\web2\js\underscore-min.js" />
+    <None Include="wwwroot\web2\resimler\book1.jpg" />
+    <None Include="wwwroot\web2\resimler\book2.jpg" />
+    <None Include="wwwroot\web2\resimler\book3.jpg" />
+    <None Include="wwwroot\web2\resimler\book4.jpg" />
+    <None Include="wwwroot\web2\resimler\book5.jpg" />
+    <None Include="wwwroot\web2\resimler\img1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="jquery.datatables" Version="1.10.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.25">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="PagedList.Mvc" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Image\" />
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="QRCoder">
+      <HintPath>..\..\..\..\Downloads\QRCoder.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

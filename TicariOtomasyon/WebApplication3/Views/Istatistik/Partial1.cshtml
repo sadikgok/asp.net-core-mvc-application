@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WebApplication3.Models.Siniflar.SinifGrup2>
+
+<table>
+    <tr>
+        <td>Departman</td>
+        <td>Adet</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Departman
+                @item.Sayi
+            </td>
+        </tr>
+    }
+</table>

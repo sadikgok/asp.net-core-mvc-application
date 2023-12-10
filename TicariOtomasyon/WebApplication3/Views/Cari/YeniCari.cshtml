@@ -1,0 +1,30 @@
+﻿@model WebApplication3.Models.Siniflar.Cari
+@{
+    ViewData["Title"] = "YeniCari";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>YeniCari</h1>
+
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x=>x.CariAdi)
+    @Html.TextBoxFor(x=>x.CariAdi,new { @class="form-control" })
+    <br />
+    @Html.LabelFor(x=>x.CariSoyadi)
+    @Html.TextBoxFor(x=>x.CariSoyadi,new { @class="form-control" })
+    <br />
+    @Html.LabelFor(x=>x.CariUnvani)
+    @Html.TextBoxFor(x=>x.CariUnvani,new { @class="form-control" })
+    <br />
+    @Html.LabelFor(x=>x.CariSehir)
+    @Html.TextBoxFor(x=>x.CariSehir,new { @class="form-control" })
+    <br />
+    @Html.LabelFor(x=>x.CariMail)
+    @Html.TextBoxFor(x=>x.CariMail,new { @class="form-control" })
+    <br />
+    @Html.LabelFor(x=>x.CariTelefon)
+    @Html.TextBoxFor(x=>x.CariTelefon,new { @class="form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

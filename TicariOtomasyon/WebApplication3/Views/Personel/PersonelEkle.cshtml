@@ -1,0 +1,29 @@
+﻿@model WebApplication3.Models.Siniflar.Personel
+@{
+    ViewData["Title"] = "PersonelEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>PersonelEkle</h1>
+<br />
+@using (Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <form class="form-group " method="post">
+        @Html.LabelFor(x=>x.PersonelAdi)
+        @Html.TextBoxFor(x=>x.PersonelAdi,new { @class="form-control" })
+        <br />
+        @Html.LabelFor(x=>x.PersonelSoyadi)
+        @Html.TextBoxFor(x=>x.PersonelSoyadi,new { @class="form-control" })
+        <br />
+        @Html.LabelFor(x=>x.PersonelGorseli)
+        @* @Html.TextBoxFor(x=>x.PersonelGorseli,new { @class="form-control" }) *@
+        <input type="file" name="PersonelGorseli">
+        <br />
+        @Html.LabelFor(x=>x.Departman)
+        @Html.DropDownListFor(x=>x.DepartmanId,(List<SelectListItem>)ViewBag.dgr, new { @class="form-control" })
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    </form>
+}
+
+

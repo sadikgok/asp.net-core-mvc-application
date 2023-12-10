@@ -1,0 +1,36 @@
+﻿@using WebApplication3.Models.Siniflar
+@model List<Personel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordred">
+    <tr>
+        <th>Personel Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Görsel</th>
+        <th>Departman</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Satışlar</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonelId</td>
+            <td>@item.PersonelAdi</td>
+            <td>@item.PersonelSoyadi</td>
+            <td>@item.PersonelGorseli</td>
+            <td>@item.Departman</td>
+            <td><a href="/Cari/CariSil/@item.PersonelId/" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Personel/PersonelGetir/@item.PersonelId/" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Departman/DepartmanPersonelSatis/@item.PersonelId" class="btn btn-secondary"></a>Satış Geçmişi</td>
+        </tr>
+    }
+
+</table>
+<a href="/Personel/PersonelEkle/" class="btn btn-primary">Personel Ekle</a>
+

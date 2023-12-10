@@ -1,0 +1,30 @@
+﻿@using WebApplication3.Models.Siniflar
+@model List<FaturaKalem>
+@{
+    ViewData["Title"] = "FaturaDetay";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>FaturaDetay</h1>
+
+
+<table class="table table-hover">
+    <tr>
+        <th> ID</th>
+        <th>Açıklama</th>
+        <th>Miktar</th>
+        <th>Birim Fiyat</th>
+        <th>Tutar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FaturaKalemId</td>
+            <td>@item.Aciklama</td>
+            <td>@item.Miktar</td>
+            <td>@item.BirimFiyat</td>
+            <td>@item.Tutar</td>
+        </tr>
+    }
+</table>
+<a href="/Fatura/FaturaEkle" class="btn btn-primary">Yeni Fatura Kalemi Ekle</a>

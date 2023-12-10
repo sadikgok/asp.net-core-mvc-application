@@ -1,0 +1,15 @@
+﻿@model WebApplication3.Models.Siniflar.Departman
+@{
+    ViewData["Title"] = "DepartmanEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>DepartmanEkle</h1>
+
+<br />
+<form class="form-group " method="post">
+    @Html.LabelFor(x=>x.DepartmanAdi)
+    @Html.TextBoxFor(x=>x.DepartmanAdi,new { @class="form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
